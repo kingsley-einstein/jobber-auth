@@ -47,6 +47,7 @@ const fetchConfigAndRegisterWithEureka = async () => {
 configure(configuration(app));
 
 app.listen(ports[process.env.NODE_ENV], () => {
+  console.log(`Server running on ${ports[process.env.NODE_ENV]} in ${process.env.NODE_ENV}`);
   if (process.env.NODE_ENV !== 'test') {
     sequelize.sync().then(async () => {
       await fetchConfigAndRegisterWithEureka();
