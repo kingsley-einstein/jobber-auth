@@ -14,7 +14,7 @@ before_script:
   - psql -c "CREATE DATABASE travis;" -U postgres
 cache:
   directories:
-    - node_modules
+    - "node_modules"
 script:
   - npm run test:travis
 after_success:
