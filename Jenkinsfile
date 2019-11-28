@@ -10,6 +10,7 @@ pipeline {
     TEST_DB_NAME = 'boardtestdb'
     TEST_DB_PORT = '5432'
     COVERALLS_REPO_TOKEN = credentials('jobber_token')
+    GIT_URI = credentials('jobber_git_url')
   }
   stages {
     stage('Clone Repository') {
