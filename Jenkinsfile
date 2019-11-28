@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    PGPASSWORD = 'password'
+    PGPASSWORD = credentials('password')
     JWT_SECRET = 'anonymous_mouse'
     TEST_PORT = '5200'
     TEST_DB_USERNAME = 'postgres'

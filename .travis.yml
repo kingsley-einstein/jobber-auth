@@ -3,6 +3,9 @@ node_js:
   - "stable"
 services:
   - postgresql
+branches:
+  only:
+    - master
 install:
   - npm install
 before_script:
