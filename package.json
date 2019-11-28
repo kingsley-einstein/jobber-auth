@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./src/tests/*.test.js --require @babel/polyfill --require @babel/register -R spec --timeout 30000 --exit",
+    "test": "nyc mocha ./src/tests/*.test.js --require @babel/polyfill --require @babel/register -R spec --timeout 30000 --exit",
     "test:local": "set NODE_ENV=test&& npm test",
     "test:travis": "export NODE_ENV=test && npm test",
     "coverage": "nyc report --reporter=text-lcov | coveralls && nyc report --reporter=lcov",
