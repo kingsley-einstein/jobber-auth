@@ -9,7 +9,7 @@ pipeline {
     TEST_DB_HOST = 'localhost'
     TEST_DB_NAME = 'boardtestdb'
     TEST_DB_PORT = '5432'
-    COVERALLS_REPO_TOKEN = credentials('coveralls_repo_token')
+    COVERALLS_REPO_TOKEN = credentials('jobber_token')
   }
   stages {
     stage('Clone Repository') {
