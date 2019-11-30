@@ -36,7 +36,7 @@ const fetchConfigAndRegisterWithEureka = async () => {
     eureka: {
       host: config.get('eureka.host'),
       port: config.get('eureka.port') || 80,
-      servicePath: '/eureka/apps'
+      servicePath: '/eureka/apps/'
     }
   };
   const eureka = await SpringCloudEureka.getEurekaInstance(eurekaOpts);
