@@ -39,7 +39,7 @@ const fetchConfigAndRegisterWithEureka = async () => {
       // servicePath: '/eureka/apps/'
       serviceUrls: {
         default: [
-          `${config.get('eureka.host')}/eureka/apps`
+          `https://${config.get('eureka.host')}/eureka/apps`
         ]
       }
     }
