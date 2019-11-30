@@ -46,7 +46,7 @@ const fetchConfigAndRegisterWithEureka = async () => {
   };
   const eureka = await SpringCloudEureka.getEurekaInstance(eurekaOpts);
   eureka.start((err) => {
-    throw err;
+    if (err) throw err;
   });
 };
 
