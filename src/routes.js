@@ -9,7 +9,7 @@ const { Auth } = middlewares;
 router.get('/', (req, res) => {
   res.status(200).json({
     statusCode: 200,
-    body: 'Welcome to job boards API'
+    body: 'Welcome to job boards auth API'
   });
 });
 

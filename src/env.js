@@ -38,5 +38,6 @@ export default {
     name: process.env.CLOUD_NAME,
     profiles: process.env.CLOUD_PROFILES
   },
-  jwtSecret: process.env.JWT_SECRET
+  jwtSecret: process.env.JWT_SECRET,
+  thisHost: process.env.MAIN_HOST
 };

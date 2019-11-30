@@ -4,6 +4,7 @@ import db from './db';
 import configuration from './config';
 import env from './env';
 import spring from './spring';
+import preventIdle from './preventIdle';
 
 const app = express();
 const { SpringCloudConfig, SpringCloudEureka } = spring;
@@ -51,6 +52,9 @@ app.listen(ports[process.env.NODE_ENV], () => {
   if (process.env.NODE_ENV !== 'test') {
     sequelize.sync().then(async () => {
       await fetchConfigAndRegisterWithEureka();
+      if (process.env.NODE_ENV === 'production') {
+        await preventIdle();
+      }
     });
   }
 });
