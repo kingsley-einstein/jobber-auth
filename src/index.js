@@ -35,7 +35,7 @@ const fetchConfigAndRegisterWithEureka = async () => {
     },
     eureka: {
       host: config.get('eureka.host'),
-      port: config.get('eureka.port') || 8761,
+      port: config.get('eureka.port'),
       servicePath: '/eureka/apps/'
     }
   };
