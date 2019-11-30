@@ -11,7 +11,8 @@
     "start:dev": "nodemon --exec babel-node src/index",
     "clean": "if exist dist rmdir /s /q dist",
     "build": "babel src -d dist",
-    "build:babel": "npm run clean && npm run build"
+    "build:babel": "npm run clean && npm run build",
+    "start:prod": "NODE_ENV=production && node dist/index"
   },
   "keywords": [],
   "author": "",

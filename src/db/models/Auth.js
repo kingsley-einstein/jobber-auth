@@ -31,6 +31,15 @@ export default (sequelize, DataTypes) => {
           msg: 'Password cannot be empty'
         }
       }
+    },
+    accountType: {
+      type: DataTypes.ENUM({
+        values: ['applicant', 'employer']
+      }),
+      defaultValue: 'applicant',
+      validate: {
+        isIn: ['applicant', 'employer']
+      }
     }
   }, {
     sequelize,
