@@ -20,7 +20,6 @@ const fetchConfigAndRegisterWithEureka = async () => {
   const eurekaOpts = {
     instance: {
       app: config.get('eureka.instance.app'),
-      instanceId: 'auth-id',
       hostName: config.get('eureka.instance.hostName'),
       port: {
         '$': parseInt(ports[process.env.NODE_ENV], 10) || 8080,
