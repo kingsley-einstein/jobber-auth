@@ -5,10 +5,17 @@ const { thisHost } = env;
 
 export default async () => {
   setInterval(() => {
-    http.request({ method: 'GET', path: '/api/v1', host: thisHost }, (res) => {
+    http.get({ host: thisHost, path: '/api/v1' }, (res) => {
       res.on('data', (chunk) => {
-        console.log('Data Received', Buffer.from(chunk).toString());
+        try {
+          console.log('Data Received', Buffer.from(chunk).toString());
+        } catch (err) {
+          console.log('Error occured', err);
+        }
       });
-    });
+    })
+      .on('error', (err) => {
+        console.log('Error occured', err.message);
+      });
   }, 60 * 5 * 1000);
 };
