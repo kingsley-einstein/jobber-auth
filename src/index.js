@@ -53,6 +53,7 @@ app.listen(ports[process.env.NODE_ENV], () => {
     sequelize.sync().then(async () => {
       await fetchConfigAndRegisterWithEureka();
       if (process.env.NODE_ENV === 'production') {
+        console.log('Running prevent idle');
         await preventIdle();
       }
     });
