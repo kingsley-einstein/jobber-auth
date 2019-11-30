@@ -5,7 +5,7 @@ const { thisHost } = env;
 
 export default async () => {
   setInterval(() => {
-    http.request({ method: 'GET', path: '/', host: thisHost }, (res) => {
+    http.request({ method: 'GET', path: '/api/v1', host: thisHost }, (res) => {
       res.on('data', (chunk) => {
         console.log('Data Received', Buffer.from(chunk).toString());
       });
