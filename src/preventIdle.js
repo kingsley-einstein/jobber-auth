@@ -1,4 +1,4 @@
-import http from 'https';
+import http from 'http';
 import env from './env';
 
 const { thisHost } = env;
