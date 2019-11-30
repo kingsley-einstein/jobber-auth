@@ -23,8 +23,8 @@ const fetchConfigAndRegisterWithEureka = async () => {
       instanceId: 'auth-id',
       hostName: config.get('eureka.instance.hostName'),
       port: {
-        $: parseInt(ports[process.env.NODE_ENV], 10) || 8080,
-        enabled: true
+        '$': parseInt(ports[process.env.NODE_ENV], 10) || 8080,
+        '@enabled': true
       },
       ipAddr: config.get('eureka.instance.hostName'),
       vipAddress: config.get('eureka.instance.vipAddress'),
