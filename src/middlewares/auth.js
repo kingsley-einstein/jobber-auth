@@ -91,7 +91,7 @@ export default class Auth {
         });
         return;
       }
-      const payload = Jwt.verify(token);
+      const payload = Jwt.decode(token);
       if (!payload) {
         res.status(401).json({
           statusCode: 401,

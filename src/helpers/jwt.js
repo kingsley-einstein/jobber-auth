@@ -21,4 +21,12 @@ export default class Jwt {
   static verify(token) {
     return jwt.verify(token, jwtSecret);
   }
+
+  /**
+   *
+   * @param {string} token
+   */
+  static decode(token) {
+    return jwt.decode(token);
+  }
 }
