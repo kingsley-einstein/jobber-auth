@@ -25,7 +25,7 @@ const fetchConfigAndRegisterWithEureka = async () => {
         '$': parseInt(ports[process.env.NODE_ENV], 10) || 8080,
         '@enabled': true
       },
-      ipAddr: config.get('eureka.instance.hostName'),
+      // ipAddr: config.get('eureka.instance.hostName'),
       vipAddress: config.get('eureka.instance.vipAddress'),
       statusPageUrl: config.get('eureka.instance.statusPageUrl'),
       dataCenterInfo: {
