@@ -1,11 +1,8 @@
-import { Model } from 'sequelize';
 import bcrypt from 'bcryptjs';
 import uuid from 'uuid/v4';
 
-class Auth extends Model {}
-
 export default (sequelize, DataTypes) => {
-  Auth.init({
+  const Auth = sequelize.define('User', {
     id: {
       type: DataTypes.UUID,
       primaryKey: true
@@ -42,7 +39,6 @@ export default (sequelize, DataTypes) => {
       }
     }
   }, {
-    sequelize,
     timestamps: true,
     hooks: {
       beforeCreate: (user) => {
@@ -55,8 +51,8 @@ export default (sequelize, DataTypes) => {
         }
       }
     },
-    modelName: 'User'
   });
+
   Auth.findByEmail = (email) => Auth.findOne({
     where: {
       email

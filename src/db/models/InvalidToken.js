@@ -1,9 +1,5 @@
-import { Model } from 'sequelize';
-
-class InvalidToken extends Model {}
-
 export default (sequelize, DataTypes) => {
-  InvalidToken.init({
+  const InvalidToken = sequelize.define('Token', {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
@@ -19,8 +15,7 @@ export default (sequelize, DataTypes) => {
       }
     }
   }, {
-    timestamps: true,
-    sequelize
+    timestamps: true
   });
 
   InvalidToken.findByToken = (token) => InvalidToken.findOne({
